@@ -14,10 +14,19 @@ var wordCount = function(phrase) {
   var finalWords = Object.keys(wordStore)
 
   for (var i = 0; i <finalWords.length; i++){
-
     output.push(wordStore[finalWords[i]] + " " + finalWords[i]);
-    debugger;
   }
   return output.sort().reverse().join(" ");
 
 };
+
+$(document).ready(function() {
+  $("#calculator").submit(function(event) {
+    var input = ($("input#phrase").val());
+    var phraseCounts = wordCount(input);
+
+    $(".result").text(phraseCounts);
+    $("#result").show();
+    event.preventDefault();
+  });
+});
