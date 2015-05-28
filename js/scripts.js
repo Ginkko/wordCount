@@ -14,8 +14,10 @@ var wordCount = function(phrase) {
   var finalWords = Object.keys(wordStore)
 
   for (var i = 0; i <finalWords.length; i++){
-    output.push(finalWords[i], wordStore[words[i]]);
+
+    output.push(wordStore[finalWords[i]] + " " + finalWords[i]);
+    debugger;
   }
-  return output.join(" ");
+  return output.sort().reverse().join(" ");
 
 };
